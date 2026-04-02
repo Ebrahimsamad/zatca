@@ -161,6 +161,20 @@
   .footer__legal {
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--space-4);
+    gap: var(--space-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__grid {
+    gap: var(--space-6);
+  }
+
+  .footer__main {
+    padding-block: var(--space-8) var(--space-6);
+  }
+
+  .footer__legal {
+    gap: var(--space-2);
   }
 }

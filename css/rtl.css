@@ -36,8 +36,10 @@
   margin-right: var(--sidebar-width);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   [dir="rtl"] .sidebar {
+    left: auto;
+    right: 0;
     transform: translateX(100%);
   }
 
@@ -47,6 +49,13 @@
 
   [dir="rtl"] .dashboard-main {
     margin-right: 0;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  [dir="rtl"] .dashboard-main {
+    margin-left: 0;
+    margin-right: var(--sidebar-width-collapsed);
   }
 }
 

@@ -200,21 +200,85 @@
 
 /* ---- Responsive ---- */
 
+/* ---- Mobile Logo (hidden on desktop, shown on mobile) ---- */
+
+.topbar__logo {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.topbar__logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-xl);
+  height: var(--icon-xl);
+  background-color: var(--color-primary-700);
+  border-radius: var(--radius-sm);
+}
+
+.topbar__logo-icon svg {
+  width: var(--icon-xs);
+  height: var(--icon-xs);
+  color: var(--color-white-const);
+}
+
+.topbar__logo-text {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-950);
+}
+
+[data-theme="dark"] .topbar__logo-icon {
+  background-color: #004A99;
+}
+
+
+/* ---- Responsive ---- */
+
 @media (max-width: 768px) {
   .topbar {
     padding-inline: var(--space-4);
     gap: var(--space-3);
   }
 
-  .topbar__search {
-    max-width: none;
+  /* Show logo, push everything right */
+  .topbar__logo {
+    display: flex;
   }
 
-  .topbar__user-name {
+  /* Hide search, user, divider, secondary icons */
+  .topbar__search,
+  .topbar__user-name,
+  .topbar__user-avatar,
+  .topbar__divider {
     display: none;
   }
 
-  .topbar__divider {
+  .topbar__icon-btn[data-fullscreen-toggle],
+  .topbar__icon-btn[data-i18n-label="topbar.help"],
+  .topbar__icon-btn[data-i18n-label="topbar.notifications"] {
+    display: none;
+  }
+
+  /* Layout: ☰ Logo ———space——— 🌙 EN */
+  .sidebar__mobile-toggle { order: 1; }
+  .topbar__logo            { order: 2; flex: 1; }
+  .topbar__actions         { order: 3; }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding-inline: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .topbar__logo-text {
     display: none;
   }
 }

@@ -128,9 +128,22 @@
   border-color: #004A99;
 }
 
-/* Sidebar logo keeps original blue */
+/* Sidebar */
+[data-theme="dark"] .sidebar {
+  background-color: var(--color-neutral-100);
+}
+
 [data-theme="dark"] .sidebar__logo {
   background-color: #004A99;
+}
+
+[data-theme="dark"] .sidebar__link.is-active {
+  background-color: var(--color-neutral-200);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .sidebar__user-avatar {
+  background-color: var(--color-neutral-300);
 }
 
 /* Topbar user avatar keeps original blue */

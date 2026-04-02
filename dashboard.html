@@ -59,6 +59,9 @@
           <span class="sidebar__logo-text" data-i18n="sidebar.brand">ZATCA Suite</span>
           <span class="sidebar__logo-badge" data-i18n="sidebar.badge">Compliance Active</span>
         </div>
+        <button type="button" class="sidebar__close" aria-label="Close menu" onclick="document.querySelector('.sidebar').classList.remove('is-open'); document.querySelector('.sidebar__mobile-overlay').classList.remove('is-visible');">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
       </div>
 
       <!-- Navigation -->
@@ -139,6 +142,19 @@
            TOP BAR
            ════════════════════════════════════════════════════════════════ -->
       <div class="topbar">
+
+        <!-- Sidebar Toggle (mobile) -->
+        <button type="button" class="sidebar__mobile-toggle" aria-label="Open menu" onclick="document.querySelector('.sidebar').classList.toggle('is-open'); document.querySelector('.sidebar__mobile-overlay').classList.toggle('is-visible');">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <!-- Logo (mobile only) -->
+        <a href="index.html" class="topbar__logo" aria-label="ZATCA Suite">
+          <div class="topbar__logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>
+          </div>
+          <span class="topbar__logo-text">ZATCA</span>
+        </a>
 
         <!-- Search -->
         <div class="topbar__search">
@@ -490,6 +506,9 @@
       </footer>
 
     </main>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar__mobile-overlay" aria-hidden="true" onclick="document.querySelector('.sidebar').classList.remove('is-open'); this.classList.remove('is-visible');"></div>
 
   </div>
 

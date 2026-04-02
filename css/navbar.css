@@ -242,4 +242,14 @@
   .navbar__toggle {
     display: flex;
   }
+
+  .navbar__inner {
+    height: var(--space-14);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__mobile-menu {
+    padding: var(--space-3) var(--space-4);
+  }
 }
