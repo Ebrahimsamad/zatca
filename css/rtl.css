@@ -1,0 +1,147 @@
+/* ================================================================
+ *  ZATCA — RTL (Right-to-Left) Overrides
+ * ================================================================
+ *  Activates via dir="rtl" on <html>.
+ *  Most layout already works via CSS logical properties
+ *  (margin-inline, padding-inline, etc.).
+ *  This file only handles edge cases that need explicit RTL fixes.
+ * ================================================================ */
+
+[dir="rtl"] {
+
+  /* ---- Font: Noto Sans Arabic (closest to Apple SF Arabic) ---- */
+  --font-family-primary: 'Noto Sans Arabic', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-heading: var(--font-family-primary);
+  --font-family-body:    var(--font-family-primary);
+
+  /* Arabic reads better with slightly relaxed spacing */
+  --letter-spacing-tight:  0;
+  --letter-spacing-wide:   0;
+  --letter-spacing-wider:  0.02em;
+  --letter-spacing-widest: 0.04em;
+}
+
+
+/* ---- Sidebar ---- */
+
+[dir="rtl"] .sidebar {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: var(--border-width-thin) solid var(--border-color);
+}
+
+[dir="rtl"] .dashboard-main {
+  margin-left: 0;
+  margin-right: var(--sidebar-width);
+}
+
+@media (max-width: 1024px) {
+  [dir="rtl"] .sidebar {
+    transform: translateX(100%);
+  }
+
+  [dir="rtl"] .sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  [dir="rtl"] .dashboard-main {
+    margin-right: 0;
+  }
+}
+
+
+/* ---- Navbar active link underline ---- */
+
+[dir="rtl"] .navbar__link.is-active::after {
+  left: var(--space-4);
+  right: var(--space-4);
+}
+
+
+/* ---- Search icon position ---- */
+
+[dir="rtl"] .topbar__search-icon {
+  left: auto;
+  right: var(--space-4);
+}
+
+[dir="rtl"] .topbar__search-input {
+  padding-left: var(--space-4);
+  padding-right: var(--space-10);
+}
+
+[dir="rtl"] .search-box__icon {
+  left: auto;
+  right: var(--space-4);
+}
+
+[dir="rtl"] .search-box__input {
+  padding-left: var(--space-4);
+  padding-right: var(--space-10);
+}
+
+
+/* ---- Select dropdown arrow ---- */
+
+[dir="rtl"] .select {
+  background-position: left var(--space-4) center;
+  padding-left: var(--space-10);
+  padding-right: var(--space-4);
+}
+
+
+/* ---- Notification dot ---- */
+
+[dir="rtl"] .topbar__icon-btn--has-dot::after {
+  right: auto;
+  left: var(--space-2);
+}
+
+
+/* ---- Compliance badge rotation ---- */
+
+[dir="rtl"] .compliance-panel__badge-frame {
+  transform: rotate(-8deg);
+}
+
+[dir="rtl"] .compliance-panel__badge::before {
+  transform: none;
+}
+
+
+/* ---- Chart axis direction ---- */
+
+[dir="rtl"] .chart-bars {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .chart-panel__axis {
+  flex-direction: row-reverse;
+}
+
+
+/* ---- Table alignment ---- */
+
+[dir="rtl"] .tx-log__th {
+  text-align: right;
+}
+
+[dir="rtl"] .tx-log__th--right {
+  text-align: left;
+}
+
+[dir="rtl"] .tx-log__td--right {
+  text-align: left;
+}
+
+
+/* ---- Hamburger animation mirror ---- */
+
+[dir="rtl"] .navbar__toggle.is-active .navbar__toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(-45deg);
+}
+
+[dir="rtl"] .navbar__toggle.is-active .navbar__toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(45deg);
+}

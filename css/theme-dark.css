@@ -1,0 +1,149 @@
+/* ================================================================
+ *  ZATCA — Dark Theme Override
+ * ================================================================
+ *  Activates via [data-theme="dark"] on <html>.
+ *  Only overrides color tokens — layout/spacing/typography untouched.
+ *  Every component automatically adapts via existing var() references.
+ *
+ *  Principle: In dark mode, light shades go dark, dark shades go light.
+ *  Primary-700 stays the same for BUTTONS (via --color-white-const)
+ *  but becomes lighter for TEXT links so they're readable.
+ * ================================================================ */
+
+[data-theme="dark"] {
+
+  /* ---- Surface ---- */
+  --color-surface:        #0f1117;
+  --color-surface-raised: #181a20;
+  --color-white:          #0f1117;
+  --color-neutral-50:     #161820;
+  --color-neutral-100:    #1c1e26;
+  --color-neutral-200:    #25272f;
+  --color-neutral-300:    #32343e;
+  --color-neutral-400:    #8a8e99;
+  --color-neutral-500:    #a0a4ae;
+  --color-neutral-600:    #b8bcc5;
+  --color-neutral-700:    #c0c3cb;
+  --color-neutral-800:    #d8dae0;
+  --color-neutral-900:    #eaebef;
+  --color-neutral-950:    #f5f5f7;
+
+  /* ---- Primary (lighter for readability on dark bg) ---- */
+  --color-primary-50:     #1a2540;
+  --color-primary-100:    #1e3050;
+  --color-primary-200:    #264068;
+  --color-primary-300:    #3366a0;
+  --color-primary-400:    #4d88c8;
+  --color-primary-500:    #6aa3dd;
+  --color-primary-600:    #80b4e8;
+  --color-primary-700:    #7db8ef;
+  --color-primary-800:    #80b4e8;
+  --color-primary-900:    #b0d0f0;
+
+  /* ---- Secondary ---- */
+  --color-secondary-50:   #141a1e;
+  --color-secondary-100:  #1a2228;
+  --color-secondary-200:  #253038;
+  --color-secondary-700:  #a0b4c0;
+
+  /* ---- Tertiary / Success ---- */
+  --color-tertiary-50:    #0e2210;
+  --color-tertiary-100:   #153018;
+  --color-tertiary-200:   #1e4422;
+  --color-tertiary-600:   #66cc6a;
+  --color-tertiary-700:   #7ddb80;
+  --color-tertiary-800:   #9ae89c;
+
+  /* ---- Danger ---- */
+  --color-danger-50:      #2e1212;
+  --color-danger-100:     #401818;
+  --color-danger-600:     #f06060;
+  --color-danger-700:     #f44848;
+
+  /* ---- Warning ---- */
+  --color-warning-50:     #2e2508;
+  --color-warning-100:    #40340e;
+  --color-warning-600:    #ffd040;
+  --color-warning-700:    #ffc820;
+
+  /* ---- Info ---- */
+  --color-info-50:        #0c2030;
+  --color-info-100:       #102a44;
+  --color-info-600:       #5cc8f8;
+  --color-info-700:       #40bef6;
+
+  /* ---- Purple ---- */
+  --color-purple-50:      #1e1230;
+  --color-purple-100:     #2a1844;
+  --color-purple-700:     #b49dfe;
+
+  /* ---- Borders & Shadows ---- */
+  --border-color:         var(--color-neutral-200);
+  --shadow-xs:   0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.4),
+                 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md:   0 4px 6px rgba(0, 0, 0, 0.4),
+                 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg:   0 10px 15px rgba(0, 0, 0, 0.4),
+                 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-xl:   0 20px 25px rgba(0, 0, 0, 0.5),
+                 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================================================
+ *  Dark Mode — Component-specific fixes
+ * ================================================================
+ *  Some components need the ORIGINAL primary-700 for filled
+ *  backgrounds (buttons), while text links need the lighter version.
+ * ================================================================ */
+
+/* Buttons keep the original dark blue fill */
+[data-theme="dark"] .btn--primary {
+  background-color: #004A99;
+  border-color: #004A99;
+}
+
+[data-theme="dark"] .btn--primary:hover {
+  background-color: #003a7a;
+  border-color: #003a7a;
+}
+
+[data-theme="dark"] .btn--outlined {
+  border-color: var(--color-primary-700);
+  color: var(--color-primary-700);
+}
+
+[data-theme="dark"] .btn--outlined:hover {
+  background-color: #004A99;
+}
+
+/* Stat card icons keep deep background */
+[data-theme="dark"] .stat-card__icon--primary {
+  background-color: var(--color-primary-100);
+}
+
+/* Compliance badge ring keeps original blue */
+[data-theme="dark"] .compliance-panel__badge-frame {
+  border-color: #004A99;
+}
+
+/* Sidebar logo keeps original blue */
+[data-theme="dark"] .sidebar__logo {
+  background-color: #004A99;
+}
+
+/* Topbar user avatar keeps original blue */
+[data-theme="dark"] .topbar__user-avatar {
+  background-color: #004A99;
+}
+
+/* Table row hover visible in dark */
+[data-theme="dark"] .tx-log__row:hover {
+  background-color: var(--color-neutral-200);
+}
+
+/* Stat card hover visible in dark */
+[data-theme="dark"] .stat-card:hover {
+  box-shadow: var(--shadow-lg);
+}

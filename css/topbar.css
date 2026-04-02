@@ -1,0 +1,220 @@
+/* ================================================================
+ *  ZATCA — Top Bar Component
+ * ================================================================
+ *  Sticky horizontal bar inside .dashboard-main.
+ *  Sits to the right of the sidebar.
+ *
+ *  Structure:
+ *    .topbar
+ *      .topbar__search
+ *        .topbar__search-icon
+ *        .topbar__search-input
+ *      .topbar__actions
+ *        .topbar__icon-btn
+ *        .topbar__divider
+ *        .topbar__user
+ *          .topbar__user-name
+ *          .topbar__user-avatar
+ * ================================================================ */
+
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  height: var(--navbar-height);
+  padding-inline: var(--space-8);
+  background-color: var(--color-white);
+  border-bottom: var(--border-width-thin) solid var(--border-color);
+}
+
+
+/* ---- Search ---- */
+
+.topbar__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: var(--search-max-width);
+}
+
+.topbar__search-icon {
+  position: absolute;
+  left: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+  color: var(--color-neutral-400);
+  pointer-events: none;
+}
+
+.topbar__search-icon svg {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}
+
+.topbar__search-input {
+  width: 100%;
+  padding: var(--space-2-5) var(--space-4) var(--space-2-5) var(--space-10);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-50);
+  border: var(--border-width-thin) solid transparent;
+  border-radius: var(--radius-md);
+  outline: none;
+  transition:
+    background-color var(--duration-fast) var(--ease-default),
+    border-color     var(--duration-fast) var(--ease-default),
+    box-shadow       var(--duration-fast) var(--ease-default);
+}
+
+.topbar__search-input::placeholder {
+  color: var(--color-neutral-400);
+}
+
+.topbar__search-input:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-neutral-300);
+}
+
+.topbar__search-input:focus {
+  background-color: var(--color-white);
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 var(--space-0-5) var(--color-primary-100);
+}
+
+
+/* ---- Right Actions ---- */
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.topbar__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--btn-icon-md);
+  height: var(--btn-icon-md);
+  border: none;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-neutral-500);
+  cursor: pointer;
+  position: relative;
+  transition:
+    background-color var(--duration-fast) var(--ease-default),
+    color            var(--duration-fast) var(--ease-default);
+}
+
+.topbar__icon-btn:hover {
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-800);
+}
+
+.topbar__icon-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--space-0-5) var(--color-primary-100);
+}
+
+.topbar__icon-btn svg {
+  width: var(--icon-md);
+  height: var(--icon-md);
+}
+
+.topbar__icon-btn--has-dot::after {
+  content: '';
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  width: var(--dot-md);
+  height: var(--dot-md);
+  background-color: var(--color-danger-600);
+  border: var(--border-width-medium) solid var(--color-white);
+  border-radius: var(--radius-full);
+}
+
+
+/* ---- Divider ---- */
+
+.topbar__divider {
+  width: var(--border-width-thin);
+  height: var(--space-6);
+  background-color: var(--border-color);
+  margin-inline: var(--space-2);
+  flex-shrink: 0;
+}
+
+
+/* ---- User ---- */
+
+.topbar__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-1-5) var(--space-2) var(--space-1-5) var(--space-4);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-default);
+}
+
+.topbar__user:hover {
+  background-color: var(--color-neutral-50);
+}
+
+.topbar__user-name {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-700);
+  white-space: nowrap;
+}
+
+.topbar__user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--avatar-sm);
+  height: var(--avatar-sm);
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-700);
+  color: var(--color-white-const);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  flex-shrink: 0;
+}
+
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+  .topbar {
+    padding-inline: var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .topbar__search {
+    max-width: none;
+  }
+
+  .topbar__user-name {
+    display: none;
+  }
+
+  .topbar__divider {
+    display: none;
+  }
+}
