@@ -38,6 +38,12 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  animation: fadeIn var(--duration-base) var(--ease-out);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 main {

@@ -2,17 +2,24 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
 
   <!-- SEO -->
   <title>Dashboard — ZATCA Suite</title>
   <meta name="description" content="ZATCA Suite compliance dashboard — monitor invoices, submissions, and compliance health.">
   <meta name="theme-color" content="#004A99">
 
-  <!-- Fonts (EN + AR) -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+
+  <!-- Prevent theme flicker -->
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('zatca-theme') || 'light');</script>
+
+  <!-- Fonts (essential weights only) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
@@ -100,9 +107,10 @@
           </span>
           <span class="sidebar__link-text" data-i18n="sidebar.apiSettings">API Settings</span>
         </a>
+
       </nav>
 
-      <!-- Footer / User -->
+      <!-- Footer / User + Logout -->
       <div class="sidebar__footer">
         <div class="sidebar__user">
           <div class="sidebar__user-avatar" aria-hidden="true">AC</div>
@@ -110,6 +118,13 @@
             <span class="sidebar__user-name" data-i18n="sidebar.companyName">Acme Compliance Corp</span>
             <span class="sidebar__user-role" data-i18n="sidebar.companyRole">Enterprise License</span>
           </div>
+          <a href="login.html" class="sidebar__logout" aria-label="Log Out" data-i18n-label="sidebar.logout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </a>
         </div>
       </div>
 
@@ -144,6 +159,16 @@
 
         <!-- Actions -->
         <div class="topbar__actions">
+
+          <!-- Fullscreen Toggle -->
+          <button type="button" class="topbar__icon-btn" aria-label="Toggle fullscreen" data-fullscreen-toggle>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+          </button>
 
           <!-- Theme Toggle -->
           <button type="button" class="topbar__icon-btn" data-theme-toggle data-i18n-label="ctrl.theme" aria-label="Toggle theme" onclick="Theme.toggle()">
@@ -379,15 +404,15 @@
             <table class="tx-log__table">
               <thead>
                 <tr>
-                  <th class="tx-log__th" data-i18n="txlog.timestamp">Timestamp</th>
-                  <th class="tx-log__th" data-i18n="txlog.invoiceUuid">Invoice UUID</th>
-                  <th class="tx-log__th" data-i18n="txlog.vendor">Vendor/Entity</th>
-                  <th class="tx-log__th tx-log__th--right">
+                  <th class="tx-log__th" scope="col" data-i18n="txlog.timestamp">Timestamp</th>
+                  <th class="tx-log__th" scope="col" data-i18n="txlog.invoiceUuid">Invoice UUID</th>
+                  <th class="tx-log__th" scope="col" data-i18n="txlog.vendor">Vendor/Entity</th>
+                  <th class="tx-log__th tx-log__th--right" scope="col">
                     <span data-i18n="txlog.value">Value</span>
-                    <svg class="sar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"<path d="m20 19.5l-5.5 1.2m0-16.7v11.22a1 1 0 0 0 1.242.97L20 15.2M2.978 19.351l5.549-1.363A2 2 0 0 0 10 16V2m10 8L4 13.5"/></svg>
+                    <svg class="sar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 19.5l-5.5 1.2m0-16.7v11.22a1 1 0 0 0 1.242.97L20 15.2M2.978 19.351l5.549-1.363A2 2 0 0 0 10 16V2m10 8L4 13.5"/></svg>
                   </th>
-                  <th class="tx-log__th" data-i18n="txlog.response">ZATCA Response</th>
-                  <th class="tx-log__th tx-log__th--center" data-i18n="txlog.action">Action</th>
+                  <th class="tx-log__th" scope="col" data-i18n="txlog.response">ZATCA Response</th>
+                  <th class="tx-log__th tx-log__th--center" scope="col" data-i18n="txlog.action">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -469,9 +494,9 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/theme.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/app.js" defer></script>
 
 </body>
 </html>

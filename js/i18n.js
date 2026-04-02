@@ -29,6 +29,7 @@ const I18n = (() => {
       'sidebar.apiSettings':     'API Settings',
       'sidebar.companyName':     'Acme Compliance Corp',
       'sidebar.companyRole':     'Enterprise License',
+      'sidebar.logout':          'Log Out',
 
       /* Topbar */
       'topbar.search':           'Search Invoices...',
@@ -77,6 +78,39 @@ const I18n = (() => {
       'footer.copy':             'ZATCA Compliance Suite. Fully compliant with Phase 2 requirements.',
       'footer.support':          'Support',
 
+      /* Auth */
+      'auth.tagline':            'Compliance Phase 2 ready architecture',
+      'auth.loginTitle':         'Welcome back',
+      'auth.loginSubtitle':      'Sign in to your compliance dashboard',
+      'auth.signupTitle':        'Create your account',
+      'auth.signupSubtitle':     'Enter your organization details to begin onboarding',
+      'auth.google':             'Continue with Google',
+      'auth.orDivider':          'or continue with email',
+      'auth.workEmailLabel':     'Work Email',
+      'auth.emailPlaceholder':   'name@company.com',
+      'auth.companyLabel':       'Company Name',
+      'auth.companyPlaceholder': 'e.g. Saudi Industrial Co.',
+      'auth.mobileLabel':        'Mobile Number',
+      'auth.mobilePlaceholder':  '+966 5x xxx xxxx',
+      'auth.passwordLabel':      'Password',
+      'auth.passwordPlaceholder':'Enter your password',
+      'auth.createPasswordLabel':'Create Password',
+      'auth.createPasswordPlaceholder':'Min. 12 characters',
+      'auth.confirmPasswordLabel':'Confirm Password',
+      'auth.confirmPasswordPlaceholder':'Repeat password',
+      'auth.rememberMe':         'Remember me',
+      'auth.forgotPassword':     'Forgot password?',
+      'auth.loginBtn':           'Sign In',
+      'auth.signupBtn':          'Create Account',
+      'auth.termsPrefix':        'By clicking "Create Account", you agree to our',
+      'auth.termsLink':          'Terms of Service',
+      'auth.termsAnd':           'and',
+      'auth.privacyLink':        'Privacy Policy',
+      'auth.hasAccount':         'Already have an account?',
+      'auth.signInLink':         'Sign In',
+      'auth.noAccount':          "Don't have an account?",
+      'auth.signUpLink':         'Sign Up',
+
       /* Controls */
       'ctrl.theme':              'Toggle theme',
       'ctrl.lang':               'عربي'
@@ -92,6 +126,7 @@ const I18n = (() => {
       'sidebar.apiSettings':     'إعدادات API',
       'sidebar.companyName':     'شركة أكمي للامتثال',
       'sidebar.companyRole':     'ترخيص مؤسسي',
+      'sidebar.logout':          'تسجيل الخروج',
 
       /* Topbar */
       'topbar.search':           'بحث في الفواتير...',
@@ -142,6 +177,39 @@ const I18n = (() => {
 
       /* Controls */
       'ctrl.theme':              'تبديل المظهر',
+      /* Auth */
+      'auth.tagline':            'بنية جاهزة لامتثال المرحلة الثانية',
+      'auth.loginTitle':         'مرحبًا بعودتك',
+      'auth.loginSubtitle':      'سجّل الدخول إلى لوحة الامتثال',
+      'auth.signupTitle':        'إنشاء حسابك',
+      'auth.signupSubtitle':     'أدخل بيانات منشأتك لبدء التسجيل',
+      'auth.google':             'المتابعة مع Google',
+      'auth.orDivider':          'أو المتابعة بالبريد الإلكتروني',
+      'auth.workEmailLabel':     'البريد الإلكتروني للعمل',
+      'auth.emailPlaceholder':   'name@company.com',
+      'auth.companyLabel':       'اسم الشركة',
+      'auth.companyPlaceholder': 'مثال: الشركة السعودية الصناعية',
+      'auth.mobileLabel':        'رقم الجوال',
+      'auth.mobilePlaceholder':  '+966 5x xxx xxxx',
+      'auth.passwordLabel':      'كلمة المرور',
+      'auth.passwordPlaceholder':'أدخل كلمة المرور',
+      'auth.createPasswordLabel':'إنشاء كلمة المرور',
+      'auth.createPasswordPlaceholder':'12 حرف على الأقل',
+      'auth.confirmPasswordLabel':'تأكيد كلمة المرور',
+      'auth.confirmPasswordPlaceholder':'أعد كتابة كلمة المرور',
+      'auth.rememberMe':         'تذكرني',
+      'auth.forgotPassword':     'نسيت كلمة المرور؟',
+      'auth.loginBtn':           'تسجيل الدخول',
+      'auth.signupBtn':          'إنشاء الحساب',
+      'auth.termsPrefix':        'بالنقر على "إنشاء الحساب"، أنت توافق على',
+      'auth.termsLink':          'شروط الخدمة',
+      'auth.termsAnd':           'و',
+      'auth.privacyLink':        'سياسة الخصوصية',
+      'auth.hasAccount':         'لديك حساب بالفعل؟',
+      'auth.signInLink':         'تسجيل الدخول',
+      'auth.noAccount':          'ليس لديك حساب؟',
+      'auth.signUpLink':         'إنشاء حساب',
+
       'ctrl.lang':               'English'
     }
   };

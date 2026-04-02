@@ -2,29 +2,35 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="index, follow">
 
   <!-- SEO -->
   <title>ZATCA — Precision Editorial</title>
-  <meta name="description" content="Advanced e-invoicing solutions for the Saudi Arabian digital economy, engineered for ZATCA Phase 1 & 2 compliance.">
+  <meta name="description" content="ZATCA-compliant e-invoicing platform with 99.9% uptime, real-time Phase 2 validation, and automated reporting for Saudi Arabian businesses.">
   <meta name="theme-color" content="#004A99">
+  <link rel="canonical" href="https://zatca.example.com/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="ZATCA — Precision Editorial">
-  <meta property="og:description" content="Advanced e-invoicing solutions for the Saudi Arabian digital economy.">
+  <meta property="og:description" content="Enterprise e-invoicing compliance for ZATCA Phase 1 & 2.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zatca.example.com/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_SA">
 
-  <!--
-    FONTS
-    ═════
-    To swap the typeface:
-      1. Change the Google Fonts URL below
-      2. Update --font-family-primary in css/variables.css
-    Everything else adapts automatically.
-  -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ZATCA — Precision Editorial">
+  <meta name="twitter:description" content="Enterprise e-invoicing compliance for ZATCA Phase 1 & 2.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+
+  <!-- Fonts (only essential weights) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
 
   <!-- Stylesheets (order matters: tokens → reset → components → layout → utilities) -->
   <link rel="stylesheet" href="css/variables.css">
@@ -60,8 +66,8 @@
 
         <!-- Desktop Actions -->
         <div class="navbar__actions">
-          <a href="#login"       class="navbar__login">Log In</a>
-          <a href="#get-started" class="btn btn--primary">Get Started</a>
+          <a href="login.html"   class="navbar__login">Log In</a>
+          <a href="signup.html"  class="btn btn--primary">Get Started</a>
         </div>
 
         <!-- Mobile Toggle -->
@@ -87,8 +93,8 @@
       <a href="#compliance"  class="navbar__link">Compliance</a>
       <a href="#pricing"     class="navbar__link">Pricing</a>
       <div class="navbar__actions">
-        <a href="#login"       class="navbar__login">Log In</a>
-        <a href="#get-started" class="btn btn--primary">Get Started</a>
+        <a href="login.html"   class="navbar__login">Log In</a>
+        <a href="signup.html"  class="btn btn--primary">Get Started</a>
       </div>
     </nav>
 
@@ -126,7 +132,7 @@
 
           <!-- CTA -->
           <div class="hero__actions">
-            <a href="#get-started" class="btn btn--primary btn--lg">Get Started</a>
+            <a href="signup.html" class="btn btn--primary btn--lg">Get Started</a>
             <a href="#docs" class="btn btn--secondary btn--lg">Documentation</a>
           </div>
 
@@ -207,9 +213,9 @@
   </footer>
 
 
-  <!-- Scripts (deferred by default at end of body) -->
-  <script src="js/navbar.js"></script>
-  <script src="js/app.js"></script>
+  <!-- Scripts -->
+  <script src="js/navbar.js" defer></script>
+  <script src="js/app.js" defer></script>
 
 </body>
 </html>

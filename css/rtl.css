@@ -51,6 +51,14 @@
 }
 
 
+/* ---- Sidebar active bar flip ---- */
+
+[dir="rtl"] .sidebar__link.is-active::before {
+  left: auto;
+  right: 0;
+}
+
+
 /* ---- Navbar active link underline ---- */
 
 [dir="rtl"] .navbar__link.is-active::after {
